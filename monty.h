@@ -68,7 +68,6 @@ void pall(stack_t **head, unsigned int line_count);
 /*stack operators*/
 void pint(stack_t **head, unsigned int line_count);
 void pop(stack_t **head, unsigned int line_count);
-void swap(stack_t **head, unsigned int line_count);
 
 /*Execution file*/
 int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *file_pointer);
