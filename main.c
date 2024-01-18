@@ -1,14 +1,13 @@
 #include "monty.h"
 #include <stdio.h>
 
+bag_t bag = {NULL, NULL, NULL, 0};
 /**
 * main - monty code interpreter
 * @argc: number of arguments
 * @argv: argument vectors
 * Return: 0
 */
-
-bag_t bag = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
