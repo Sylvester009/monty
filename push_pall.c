@@ -8,39 +8,42 @@
 * Return: nothing
 */
 
-void push(stack_t **stack, unsigned int line_number)
+#include "monty.h"
+/**
+ * f_push - add node to the stack
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void push(stack_t **head, unsigned int count)
 {
-int value;
-stack_t *new_node = malloc(sizeof(stack_t));
-  
-if (bag.argument == NULL)
-{
-fprintf(stderr, "L%u: usage: push integer\n", line_number);
-exit(EXIT_FAILURE);
-}
+	int i, k = 0, flg = 0;
 
-/* Extract the integer argument from the bus structure */
-if (sscanf(bag.argument, "%d", &value) != 1)
-{
-fprintf(stderr, "L%u: usage: push integer\n", line_number);
-exit(EXIT_FAILURE);
-}
-
-/* Create a new node with the integer value and push it onto the stack */
-if (new_node == NULL)
-{
-fprintf(stderr, "Error: malloc failed\n");
-exit(EXIT_FAILURE);
-}
-
-new_node->n = value;
-new_node->prev = NULL;
-new_node->next = *stack;
-
-if (*stack != NULL)
-(*stack)->prev = new_node;
-
-*stack = new_node;
+	if (bag.arg)
+	{
+		if (bag.arg[0] == '-')
+			k++;
+		for (; bag.arg[k] != '\0'; k++)
+		{
+			if (bag.arg[k] > 57 || bag.arg[k] < 48)
+				flg = 1; }
+		if (flg == 1)
+		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+			fclose(bag.file);
+			free(bag.content);
+			free_stack(*head);
+			exit(EXIT_FAILURE); }}
+	else
+	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+		fclose(bag.file);
+		free(bag.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE); }
+	n = atoi(bag.arg);
+	if (bag.stack_queue_flg == 0)
+		addnode(head, n);
+	else
+		addqueue(head, n);
 }
 
 /**
