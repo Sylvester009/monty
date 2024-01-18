@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 bag_t bag = {NULL, NULL, NULL, 0};
 
