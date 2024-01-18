@@ -33,7 +33,7 @@ fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 
-new_node->data = value;
+new_node->value = value;
 new_node->prev = NULL;
 new_node->next = *stack;
 
@@ -64,7 +64,7 @@ return;
 /* Print all values on the stack, starting from the top */
 while (current != NULL)
 {
-printf("%d\n", current->data);
+printf("%d\n", current->value);
 current = current->next;
 }
 }
