@@ -25,8 +25,8 @@ void add_node(stack_t **head, int n)
 
 **
  * add_queue - adds node to the tail stack
- * @n: new value
- * @head: head of the stack
+ * n: new_value
+ * head: head of the stack
  * Return: void
 */
   
