@@ -13,7 +13,7 @@
 int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *file_pointer)
 {
 	instruction_t ops[] = {
-				{"push", push}, {"pall", pall}
+				{"push", push}, {"pall", pall},
 				{"stack", f_stack},
 				{NULL, NULL}
 				};
@@ -23,7 +23,7 @@ int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *
 	op = strtok(line_content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
-	bag.arg = strtok(NULL, " \n\t");
+	bag.argument = strtok(NULL, " \n\t");
 	while (ops[i].opcode && op)
 	{
 		if (strcmp(op, ops[i].opcode) == 0)
