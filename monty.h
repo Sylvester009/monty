@@ -70,6 +70,7 @@ void pall(stack_t **head, unsigned int line_count);
 int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *file_pointer);
 
 /*handlers*/
-char *my_strdup(const char *str);
+void add_node(stack_t **head, int n);
+void add_queue(stack_t **head, int n)
 
 #endif
