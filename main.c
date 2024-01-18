@@ -1,8 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
 
-bag_t bag = {NULL, NULL, NULL, 0};
-
 /**
 * main - monty code interpreter
 * @argc: number of arguments
@@ -12,6 +10,8 @@ bag_t bag = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
+bag_t bag = {NULL, NULL, NULL, 0};
+
 char *line_content;
 FILE *file_pointer;
 size_t size = 0;
