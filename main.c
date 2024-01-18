@@ -28,7 +28,7 @@ return EXIT_FAILURE;
 }
 while (fgets(line_buffer, sizeof(line_buffer), bag.file_pointer) != NULL)
 {
-bag.line_content = strdup(line_buffer);
+bag.line_content = my_strdup(line_buffer);
 if (bag.line_content == NULL)
 {
 fprintf(stderr, "Error: Memory allocation failed\n");
