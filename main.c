@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen(argv[1], "r");
+	file_pointer = fopen(argv[1], "r");
 	bag.file_pointer = file_pointer;
 	if (!file_pointer)
 	{
