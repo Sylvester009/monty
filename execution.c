@@ -15,7 +15,7 @@ void execute(stack_t **stack, unsigned int line_number)
 char *opcode;
 int value;
   
-if (sscanf(bag.line_content, "%ms %d", &opcode, &value) == 2)
+if (sscanf(bag.line_content, "%s %d", &opcode, &value) == 2)
 {
 if (strcmp(opcode, "push") == 0)
 {
