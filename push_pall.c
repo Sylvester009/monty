@@ -40,9 +40,9 @@ exit(EXIT_FAILURE);
 }
 i = atoi(bag.argument);
 if (bag.stack_queue_flg == 0)
-add_node(head, n);
+add_node(head, i);
 else
-add_queue(head, n);
+add_queue(head, i);
 }
 
 /**
