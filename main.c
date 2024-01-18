@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	char *line_content;
 	FILE *file_pointer;
 	size_t size = 0;
-	ssize_t read_line = 1;
+	ssize_t read_line;
 	stack_t *stack = NULL;
 	unsigned int line_count = 0;
 
