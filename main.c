@@ -10,6 +10,7 @@ bag_t bag = {NULL, NULL, NULL, 0};
 int main(int argc, char *argv[])
 {
 stack_t *stack = NULL;
+void(argc);
 
 bag.argument = "10";
 bag.file_pointer = fopen(argv[1], "r");
