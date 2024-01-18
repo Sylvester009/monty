@@ -12,7 +12,6 @@ void push(stack_t **stack, unsigned int line_number)
 {
 int value;
 stack_t *new_node = malloc(sizeof(stack_t));
-void(line_number);
   
 if (bag.argument == NULL)
 {
@@ -56,6 +55,8 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 stack_t *current;
 current = *stack;
+void(line_number);
+
 /* Check if the stack is empty */
 if (stack == NULL || *stack == NULL)
 return;
