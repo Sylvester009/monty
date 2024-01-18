@@ -71,6 +71,7 @@ int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *
 
 /*handlers*/
 void add_node(stack_t **head, int n);
-void add_queue(stack_t **head, int n)
+void add_queue(stack_t **head, int n);
+void free_stack(stack_t *head);
 
 #endif
