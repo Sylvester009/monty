@@ -15,5 +15,5 @@ free(bag.line_content);
 free_stack(*head);
 exit(EXIT_FAILURE);
 }
-printf("%d\n", (*head)->n);
+printf("%d\n", (*head)->i);
 }
