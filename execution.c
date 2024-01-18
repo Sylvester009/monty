@@ -14,7 +14,6 @@ int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *
 {
 	instruction_t ops[] = {
 				{"push", push}, {"pall", pall},
-				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
