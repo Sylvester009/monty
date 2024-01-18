@@ -37,6 +37,7 @@ return (EXIT_FAILURE);
 }
 
 uni_data.current_line = bag.line_content;
+printf("Executing: %s", bag.line_content);
 execute(&stack, 1);
 
 free(bag.line_content);
