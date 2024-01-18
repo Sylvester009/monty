@@ -40,6 +40,26 @@ typedef struct instruction_s
 } instruction_t;
 
 
+/**
+* struct bug_g - Variables - args, file, line content
+* @arg: Value
+* @file_pointer: Pointer to Monty file
+* @line_content: Line content
+* @stack_queue_flg: Flag to change stack <-> queue
+* Description: Structure carrying values through the program
+*/
+
+typedef struct bag_g
+{
+    char *argument;            /* Value of the argument */
+    FILE *file_pointer;        /* Pointer to the Monty file */
+    char *line_content;        /* Content of the current line */
+    int stack_queue_flg;      /* Flag to change stack <-> queue */
+} bag_t;
+
+extern bag_t bag;
+
+
 /**pull and pall*/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
