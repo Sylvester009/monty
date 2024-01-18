@@ -12,10 +12,10 @@
 
 void execute(stack_t **stack, unsigned int line_number)
 {
-char *opcode;
+char opcode[100];
 int value;
-  
-if (sscanf(bag.line_content, "%s %d", &opcode, &value) == 2)
+
+if (sscanf(bag.line_content, "%99s %d", opcode, &value) == 2)
 {
 if (strcmp(opcode, "push") == 0)
 {
@@ -30,8 +30,6 @@ else
 fprintf(stderr, "Unknown opcode '%s' at line %u\n", opcode, line_number);
 exit(EXIT_FAILURE);
 }
-
-free(opcode);
 }
 else
 {
