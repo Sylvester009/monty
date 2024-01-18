@@ -21,13 +21,13 @@ void push(stack_t **head, unsigned int line_count)
 			if (bag.argument[k] > 57 || bag.argument[k] < 48)
 				flg = 1; }
 		if (flg == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+		{ fprintf(stderr, "L%d: usage: push integer\n", line_count);
 			fclose(bag.file_pointer);
 			free(bag.line_content);
 			free_stack(*head);
 			exit(EXIT_FAILURE); }}
 	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+	{ fprintf(stderr, "L%d: usage: push integer\n", line_count);
 		fclose(bag.file_pointer);
 		free(bag.line_content);
 		free_stack(*head);
@@ -42,15 +42,15 @@ void push(stack_t **head, unsigned int line_count)
 /**
 * pall - Prints all the values on the stack.
 * @stack: double head pointer to the stack
-* @line_number: unused line count
+* @line_count: unused line count
 *
 * Return: nothing
 */
 
-void f_pall(stack_t **head, unsigned int counter)
+void pall(stack_t **head, unsigned int line_count)
 {
 	stack_t *current;
-	(void)counter;
+	(void)line_count;
 
 	current = *head;
 	if (current == NULL)
