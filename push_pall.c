@@ -10,33 +10,39 @@
 
 void push(stack_t **head, unsigned int line_count)
 {
-	int i, k = 0, flg = 0;
+int i, k = 0, flg = 0;
 
-	if (bag.argument)
-	{
-		if (bag.argument[0] == '-')
-			k++;
-		for (; bag.argument[k] != '\0'; k++)
-		{
-			if (bag.argument[k] > 57 || bag.argument[k] < 48)
-				flg = 1; }
-		if (flg == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", line_count);
-			fclose(bag.file_pointer);
-			free(bag.line_content);
-			free_stack(*head);
-			exit(EXIT_FAILURE); }}
-	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", line_count);
-		fclose(bag.file_pointer);
-		free(bag.line_content);
-		free_stack(*head);
-		exit(EXIT_FAILURE); }
-	i = atoi(bag.argument);
-	if (bag.stack_queue_flg == 0)
-		add_node(head, n);
-	else
-		add_queue(head, n);
+if (bag.argument)
+{
+if (bag.argument[0] == '-')
+k++;
+for (; bag.argument[k] != '\0'; k++)
+{
+if (bag.argument[k] > 57 || bag.argument[k] < 48)
+flg = 1;
+}
+if (flg == 1)
+{
+fprintf(stderr, "L%d: usage: push integer\n", line_count);
+fclose(bag.file_pointer);
+free(bag.line_content);
+free_stack(*head);
+exit(EXIT_FAILURE); 
+}
+}
+else
+{ 
+fprintf(stderr, "L%d: usage: push integer\n", line_count);
+fclose(bag.file_pointer);
+free(bag.line_content);
+free_stack(*head);
+exit(EXIT_FAILURE);
+}
+i = atoi(bag.argument);
+if (bag.stack_queue_flg == 0)
+add_node(head, n);
+else
+add_queue(head, n);
 }
 
 /**
