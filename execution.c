@@ -10,30 +10,33 @@
 * Return: nothing
 */
 
-void execute(stack_t **stack, unsigned int line_number)
+int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *file_pointer)
 {
-char opcode[100];
-int value;
+	instruction_t ops[] = {
+				{"push", push}, {"pall", pall}
+				{"stack", f_stack},
+				{NULL, NULL}
+				};
+	unsigned int i = 0;
+	char *op;
 
-if (sscanf(bag.line_content, "%99s %d", opcode, &value) == 2)
-{
-if (strcmp(opcode, "push") == 0)
-{
-push(stack, value);
-}
-else if (strcmp(opcode, "pall") == 0)
-{
-pall(stack, line_number);
-}
-else
-{
-fprintf(stderr, "Unknown opcode '%s' at line %u\n", opcode, line_number);
-exit(EXIT_FAILURE);
-}
-}
-else
-{
-fprintf(stderr, "Invalid instruction format at line %u\n", line_number);
-exit(EXIT_FAILURE);
-}
+	op = strtok(line_content, " \n\t");
+	if (op && op[0] == '#')
+		return (0);
+	bag.arg = strtok(NULL, " \n\t");
+	while (ops[i].opcode && op)
+	{
+		if (strcmp(op, ops[i].opcode) == 0)
+		{	ops[i].f(stack, line_count);
+			return (0);
+		}
+		i++;
+	}
+	if (op && ops[i].opcode == NULL)
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", line_count, op);
+		fclose(file_pointer);
+		free(line_content);
+		free_stack(*stack);
+		exit(EXIT_FAILURE); }
+	return (1);
 }
