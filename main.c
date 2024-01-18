@@ -30,7 +30,7 @@ return EXIT_FAILURE;
 while (getline(&bag.line_content, &(size_t){0}, bag.file_pointer) != -1)
 {
 uni_data.current_line = bag.line_content;
-process_instruction(&stack, 1);
+execute(&stack, 1);
 }
 
 fclose(bag.file_pointer);
