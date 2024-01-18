@@ -1,17 +1,17 @@
 #include "monty.h"
 
-/* Global variable to store the current line being processed */
 struct
 {
 char *current_line;
 } uni_data;
 
-/* Structure to carry values through the program */
 bag_t bag = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
 stack_t *stack = NULL;
+
+char line_buffer[MAX_LINE_LENGTH];
 
 if (argc != 2)
 {
@@ -26,15 +26,23 @@ if (bag.file_pointer == NULL)
 fprintf(stderr, "Error: Could not open file %s\n", argv[1]);
 return EXIT_FAILURE;
 }
-
-while (getline(&bag.line_content, &(size_t){0}, bag.file_pointer) != -1)
+while (fgets(line_buffer, sizeof(line_buffer), bag.file_pointer) != NULL)
 {
+bag.line_content = strdup(line_buffer);
+if (bag.line_content == NULL)
+{
+fprintf(stderr, "Error: Memory allocation failed\n");
+fclose(bag.file_pointer);
+return (EXIT_FAILURE);
+}
+
 uni_data.current_line = bag.line_content;
 execute(&stack, 1);
+
+free(bag.line_content);
 }
 
 fclose(bag.file_pointer);
-free(bag.line_content);
 
 return (0);
 }
