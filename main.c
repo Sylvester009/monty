@@ -7,6 +7,8 @@ char *current_line;
 
 bag_t bag = {NULL, NULL, NULL, 0};
 
+void(argc);
+
 int main(int argc, char *argv[])
 {
 stack_t *stack = NULL;
