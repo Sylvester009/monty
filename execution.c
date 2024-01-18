@@ -18,6 +18,7 @@ unsigned int line_count, FILE *file_pointer)
 instruction_t ops[] = {
 {"push", push}, {"pall", pall},
 {"pint", pint},
+{"pop", pop},
 {NULL, NULL}
 };
 unsigned int i = 0;
