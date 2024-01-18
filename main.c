@@ -8,10 +8,9 @@
 * Return: 0
 */
 
-bag_t bag = {NULL, NULL, NULL, 0};
-
 int main(int argc, char *argv[])
 {
+bag_t bag = {NULL, NULL, NULL, 0};
 
 char *line_content;
 FILE *file_pointer;
