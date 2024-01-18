@@ -5,12 +5,15 @@
 /**
 * execute - function that executes the opcode
 * @stack: head stack linked list
-* @line_number: line count
+* @line_count: line count
+* @line_content: line content
+* @file_pointer: pointer to the file
 *
 * Return: nothing
 */
 
-int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *file_pointer)
+int execute(char *line_content, stack_t **stack,
+unsigned int line_count, FILE *file_pointer)
 {
 instruction_t ops[] = {
 {"push", push}, {"pall", pall},
@@ -26,7 +29,7 @@ bag.argument = strtok(NULL, " \n\t");
 while (ops[i].opcode && op)
 {
 if (strcmp(op, ops[i].opcode) == 0)
-{	
+{
 ops[i].f(stack, line_count);
 return (0);
 }
