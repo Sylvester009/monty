@@ -30,7 +30,7 @@ stack_t *h;
 
 if (*head == NULL)
 {
-fprintf(stderr, "L%d: can't pop an empty stack\n",line_count);
+fprintf(stderr, "L%d: can't pop an empty stack\n", line_count);
 fclose(bag.file_pointer);
 free(bag.line_content);
 free_stack(*head);
