@@ -29,7 +29,7 @@ void add_node(stack_t **head, int n)
  * @head: head of the stack
  * Return: void
 */
-  
+
 void add_queue(stack_t **head, int n)
 {
 	stack_t *new_node, *tmp;
