@@ -32,7 +32,7 @@ void push(stack_t **head, unsigned int line_count)
 		free(bag.line_content);
 		free_stack(*head);
 		exit(EXIT_FAILURE); }
-	n = atoi(bag.argument);
+	i = atoi(bag.argument);
 	if (bag.stack_queue_flg == 0)
 		add_node(head, n);
 	else
