@@ -34,9 +34,9 @@ void push(stack_t **head, unsigned int line_count)
 		exit(EXIT_FAILURE); }
 	n = atoi(bag.argument);
 	if (bag.stack_queue_flg == 0)
-		addnode(head, n);
+		add_node(head, n);
 	else
-		addqueue(head, n);
+		add_queue(head, n);
 }
 
 /**
