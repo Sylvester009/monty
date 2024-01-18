@@ -65,8 +65,9 @@ extern bag_t bag;
 /**pull and pall*/
 void push(stack_t **head, unsigned int line_count);
 void pall(stack_t **head, unsigned int line_count);
-/*pint*/
+/*pint and pop*/
 void pint(stack_t **head, unsigned int line_count);
+void pop(stack_t **head, unsigned int line_count);
 
 /*Execution file*/
 int execute(char *line_content, stack_t **stack, unsigned int line_count, FILE *file_pointer);
