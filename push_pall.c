@@ -55,7 +55,7 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 stack_t *current;
 current = *stack;
-void(line_number);
+(void)line_number;
 
 /* Check if the stack is empty */
 if (stack == NULL || *stack == NULL)
