@@ -27,11 +27,11 @@ fprintf(stderr, "L%d: usage: push integer\n", line_count);
 fclose(bag.file_pointer);
 free(bag.line_content);
 free_stack(*head);
-exit(EXIT_FAILURE); 
+exit(EXIT_FAILURE);
 }
 }
 else
-{ 
+{
 fprintf(stderr, "L%d: usage: push integer\n", line_count);
 fclose(bag.file_pointer);
 free(bag.line_content);
