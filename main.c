@@ -24,19 +24,17 @@ bag.file_pointer = fopen(argv[1], "r");
 if (bag.file_pointer == NULL)
 {
 fprintf(stderr, "Error: Could not open file %s\n", argv[1]);
-return (EXIT_FAILURE);
+return EXIT_FAILURE;
 }
 
-bag.line_content = "push 10";
-bag.stack_queue_flg = 0;
-
+while (getline(&bag.line_content, &(size_t){0}, bag.file_pointer) != -1)
+{
 uni_data.current_line = bag.line_content;
-push(&stack, 1);
-
-uni_data.current_line = "pall";
-pall(&stack, 2);
+process_instruction(&stack, 1);
+}
 
 fclose(bag.file_pointer);
+free(bag.line_content);
 
 return (0);
 }
