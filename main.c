@@ -19,7 +19,6 @@ fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
 return (EXIT_FAILURE);
 }
 
-bag.argument = "10";
 bag.file_pointer = fopen(argv[1], "r");
 
 if (bag.file_pointer == NULL)
