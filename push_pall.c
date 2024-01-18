@@ -2,7 +2,7 @@
 
 /**
 * push - Pushes an element onto the stack.
-* @stack: double head pointer to the stack
+* @head: pointer to head
 * @line_count: line count
 *
 * Return: nothing
@@ -47,7 +47,7 @@ add_queue(head, i);
 
 /**
 * pall - Prints all the values on the stack.
-* @stack: double head pointer to the stack
+* @head: pointer to the head
 * @line_count: unused line count
 *
 * Return: nothing
